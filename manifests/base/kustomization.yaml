@@ -7,3 +7,6 @@ resources:
   - ./rbac/service-account.yaml
   - service.yaml
   - deployment.yaml
+
+patches:
+  - path: training-operator-metrics.yaml
