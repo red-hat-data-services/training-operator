@@ -1,4 +1,4 @@
-FROM  tensorflow/tensorflow:1.8.0
+FROM  tensorflow/tensorflow:1.15.5
 RUN pip install retrying
 RUN mkdir -p /opt/kubeflow
 COPY examples/tensorflow/tf_sample/tf_smoke.py /opt/kubeflow/
