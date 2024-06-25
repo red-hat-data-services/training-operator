@@ -1,4 +1,4 @@
-FROM mxnet/python:1.9.1_gpu_cu112_py3
+FROM mxnet/python:1.9.1_native_py3
 
 RUN apt-get update -y && \
     apt-get install -y git && \
