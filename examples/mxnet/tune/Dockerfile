@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/mxnet:23.09-py3
+FROM nvcr.io/nvidia/mxnet:23.12-py3
 
 # COPY custom code to container
 COPY start-job.py /
