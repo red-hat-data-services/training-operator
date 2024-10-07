@@ -1,7 +1,7 @@
 # This is a copy of the publish-core-images.yaml and has been customized to
 # use the quay login credentials.
 # The unused parts of the original have been commented out on purpose.
-name: ODH
+name: Publish KFTO Base Image to ODH
 
 on:
   push:
@@ -14,97 +14,58 @@ on:
       - dev
 
 jobs:
-    build-and-publish-operator:
-      name: Build and (or) Publish Image
-      runs-on: ubuntu-latest  
-      env:
-        GOPATH: ${{ github.workspace }}/go
-        REPO_NAME: ${{ vars.QUAY_REPO_NAME || 'opendatahub' }}
-      steps:
-        - name: Environment dump
-          shell: bash
-          run: |
-            echo "GOPATH = ${GOPATH}"
-            echo "REPO_NAME = ${REPO_NAME}"
-        
-        - name: Checkout
-          uses: actions/checkout@v4
-          
-        - name: Set up Go
-          uses: actions/setup-go@v5
-          with:
-            go-version-file: go.mod
 
-        - name: Run go mod
-          shell: bash
-          run: |
-            go mod download
-                
-        # Build operators inside the gh runner vm directly and then copy the go binaries to docker images using the Dockerfile.buildx
-        - name: Build linux/amd64 operator binary
-          env:
-            CGO_ENABLED: 1
-            GOOS: linux
-            GOARCH: amd64
-          shell: bash
-          run: |
-            go build -tags strictfipsruntime -a -o manager-$GOARCH cmd/training-operator.v1/main.go
-   
-        - name: Build linux/arm64 operator binary
-          env:
-            CC: aarch64-linux-gnu-gcc
-            CGO_ENABLED: 1
-            GOOS: linux
-            GOARCH: arm64
-          shell: bash
-          run: |
-            sudo apt-get update
-            sudo apt-get install -y gcc-aarch64-linux-gnu libc6-dev-arm64-cross
-            go build -tags strictfipsruntime -a -o manager-$GOARCH cmd/training-operator.v1/main.go
+    build-and-publish-base-image:
+      name: Build and (or) Publish Base Image
+      runs-on: ubuntu-latest
+      env:
+        REPO_NAME: ${{ vars.QUAY_REPO_NAME || 'opendatahub' }}
+        IMAGE_NAME: ${{ vars.QUAY_IMAGE_NAME || 'trainer-base-image' }}
+      steps:
 
         - name: Add docker tags
           id: meta
           uses: docker/metadata-action@v5
           with:
-            images: quay.io/${{ env.REPO_NAME }}/training-operator
+            images: quay.io/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}
             tags: |
               type=raw,latest
               type=ref,event=pr
-              type=sha,prefix=v1-odh-  
+              type=sha,prefix=v1-odh-
               type=ref,enable=true,priority=600,prefix=,suffix=,event=tag
-  
-        - name: Build image 
+
+        - name: Build image
           id: build-image
           uses: redhat-actions/buildah-build@v2
           with:
-            image: quay.io/${{ env.REPO_NAME }}/training-operator
+            image: quay.io/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}
             tags: ${{ steps.meta.outputs.tags }}
             labels: ${{ steps.meta.outputs.labels }}
-            platforms: linux/amd64,linux/arm64 
+            platforms: linux/amd64,linux/arm64
+            context: sdk/python/kubeflow/trainer
             containerfiles: |
-              build/images/training-operator/Dockerfile.multiarch
+              sdk/python/kubeflow/trainer/Dockerfile
             extra-args: |
-              --pull  
-        
+              --pull
+
         # Check if image is build
         - name: Check images created
           shell: bash
-          run: buildah images | grep 'quay.io/${{ env.REPO_NAME }}/training-operator'
+          run: buildah images | grep 'quay.io/${{ env.REPO_NAME }}/${{ env.IMAGE_NAME }}'
 
         - name: Check image manifest
           shell: bash
           run: |
-            buildah manifest inspect ${{ steps.build-image.outputs.image }}:latest      
-    
+            buildah manifest inspect ${{ steps.build-image.outputs.image }}:latest
 
         - name: Check image metadata
-          shell: bash  
+          shell: bash
           run: |
               buildah inspect ${{ steps.build-image.outputs.image-with-tag }} | jq '.OCIv1.config.Labels."org.opencontainers.image.title"'
               buildah inspect ${{ steps.build-image.outputs.image-with-tag }} | jq '.OCIv1.config.Labels."org.opencontainers.image.description"'
               buildah inspect ${{ steps.build-image.outputs.image-with-tag }} | jq '.Docker.config.Labels."org.opencontainers.image.title"'
               buildah inspect ${{ steps.build-image.outputs.image-with-tag }} | jq '.Docker.config.Labels."org.opencontainers.image.description"'
-                
+
         - name: Login to Quay.io
           id: podman-login-quay
           # Trigger step only for specific branch (master, v.*-branch) or tag (v.*).
@@ -114,19 +75,19 @@ jobs:
               podman login --username ${{ secrets.QUAY_USERNAME }} --password ${{ secrets.QUAY_TOKEN }} quay.io
 
         - name: Push to Quay.io
-          if:  always() && steps.podman-login-quay.outcome == 'success' 
+          if:  always() && steps.podman-login-quay.outcome == 'success'
           id: push-to-quay
           uses: redhat-actions/push-to-registry@v2
           with:
             image: ${{ steps.build-image.outputs.image }}
             tags: ${{ steps.build-image.outputs.tags }}
-        
+
         - name: Print image url
           if: steps.push-to-quay.outcome == 'success'
-          shell: bash  
+          shell: bash
           run: echo "Image pushed to ${{ steps.push-to-quay.outputs.registry-paths }}"
-  
+
         - name: Logout from Quay.io
           if: always() && steps.podman-login-quay.outcome == 'success'
           run: |
-            podman logout quay.io 
+            podman logout quay.io
