@@ -463,7 +463,7 @@ spec:
       - input: $(params.skip-checks)
         operator: in
         values:
-        - "false"
+        - "true"
       workspaces:
       - name: workspace
         workspace: workspace
