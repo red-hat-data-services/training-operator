@@ -402,7 +402,7 @@ spec:
       - input: $(params.skip-checks)
         operator: in
         values:
-        - "true"
+        - "false"
     - name: clair-scan
       params:
       - name: image-digest
