@@ -466,7 +466,7 @@ spec:
       - input: $(params.skip-checks)
         operator: in
         values:
-        - "true"
+        - "false"
       workspaces:
       - name: workspace
         workspace: workspace
@@ -491,7 +491,7 @@ spec:
       - input: $(params.skip-checks)
         operator: in
         values:
-        - "true"
+        - "false"
     - name: apply-tags
       params:
       - name: IMAGE
