@@ -32,7 +32,7 @@ LABEL com.redhat.component="odh-training-operator-container" \
       io.openshift.expose-services="" \
       io.k8s.display-name="odh-training-operator" \
       io.k8s.description="odh-training-operator" \
-      io.openshift.tags="odh-training-operator"
+      io.openshift.tags="odh-training-operator" \
       com.redhat.license_terms="https://www.redhat.com/licenses/Red_Hat_Standard_EULA_20191108.pdf"
 
 WORKDIR /
