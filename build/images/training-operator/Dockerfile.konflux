@@ -1,6 +1,26 @@
 ARG SOURCE_CODE=.
 
-FROM registry.access.redhat.com/ubi8/go-toolset:1.21@sha256:742ae6ec1aef3e7faae488c47695fb64964d342aefecf52d23bd9d5e6731d0b6 as builder
+# BEGIN -- workaround lack of go-toolset for golang 1.23
+ARG GOLANG_IMAGE=registry-proxy.engineering.redhat.com/rh-osbs/openshift-golang-builder@sha256:2d5976ded2a3abda6966949c4d545d0cdd88a4d6a15989af38ca5e30e430a619
+FROM ${GOLANG_IMAGE} AS golang
+
+FROM registry.access.redhat.com/ubi8/ubi@sha256:fd93fc09dc09f3d3edae30577460a979bb52df351b826ef3a5c02ec8213b433a AS builder
+
+ARG GOLANG_VERSION=1.23.0
+
+# Install system dependencies
+RUN dnf upgrade -y && dnf install -y \
+    gcc \
+    make \
+    openssl-devel \
+    && dnf clean all && rm -rf /var/cache/yum
+
+# Install Go
+ENV PATH=/usr/local/go/bin:$PATH
+
+ARG GOLANG_DIR=/usr/lib/golang
+COPY --from=golang ${GOLANG_DIR} /usr/local/go
+# End of Go versioning workaround
 
 WORKDIR /workspace
 # Copy the Go Modules manifests
@@ -17,9 +37,7 @@ COPY . .
 USER root
 RUN CGO_ENABLED=1 GOOS=linux GO111MODULE=on go build -tags strictfipsruntime -a -o manager cmd/training-operator.v1/main.go
 
-# Use distroless as minimal base image to package the manager binary
-# Refer to https://github.com/GoogleContainerTools/distroless for more details
-
+# Runtime
 FROM registry.redhat.io/ubi8/ubi-minimal@sha256:d16d4445b1567f29449fba3b6d2bc37db467dc3067d33e940477e55aecdf6e8e AS runtime
 
 ARG USER=65532
