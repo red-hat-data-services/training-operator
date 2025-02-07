@@ -2,4 +2,7 @@ contentOrigin:
   repofiles:
     - ubi.repo
 packages:
+  - git
+  - make
+  - openssl-devel
   - bind-utils
