@@ -6,5 +6,3 @@ packages:
   - make
   - openssl-devel
   - bind-utils
-arches:
-  - x86_64
