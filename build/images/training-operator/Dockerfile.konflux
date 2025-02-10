@@ -9,11 +9,6 @@ FROM registry.access.redhat.com/ubi8/ubi@sha256:fd93fc09dc09f3d3edae30577460a979
 ARG GOLANG_VERSION=1.23.0
 
 # Install system dependencies
-RUN dnf upgrade -y && dnf install -y \
-    gcc \
-    make \
-    openssl-devel \
-    && dnf clean all && rm -rf /var/cache/yum
 
 # Install Go
 ENV PATH=/usr/local/go/bin:$PATH
@@ -52,7 +47,7 @@ LABEL com.redhat.component="odh-training-operator-container" \
       io.k8s.description="odh-training-operator" \
       com.redhat.license_terms="https://www.redhat.com/licenses/Red_Hat_Standard_EULA_20191108.pdf"
 
-RUN microdnf update && microdnf install -y bind-utils
+#RUN microdnf update && microdnf install -y bind-utils
 
 WORKDIR /
 COPY --from=builder /workspace/manager .
