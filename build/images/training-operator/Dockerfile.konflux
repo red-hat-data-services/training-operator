@@ -51,7 +51,7 @@ LABEL com.redhat.component="odh-training-operator-container" \
       io.k8s.description="odh-training-operator" \
       com.redhat.license_terms="https://www.redhat.com/licenses/Red_Hat_Standard_EULA_20191108.pdf"
 
-RUN microdnf update && microdnf install -y bind-utils
+RUN microdnf update -y && microdnf install -y bind-utils
 
 WORKDIR /
 COPY --from=builder /workspace/manager .
