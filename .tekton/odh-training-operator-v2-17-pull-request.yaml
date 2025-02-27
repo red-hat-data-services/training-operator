@@ -46,6 +46,10 @@ spec:
       value: pipelines-poc
     - name: pathInRepo
       value: pipelines/container-build.yaml
+    - name: token
+      value: pipelines-as-code-secret
+    - name: tokenKey
+      value: password
   taskRunTemplate: {}
   workspaces:
   - name: git-auth
