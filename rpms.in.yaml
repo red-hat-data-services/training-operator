@@ -6,3 +6,5 @@ packages:
   - make
   - openssl-devel
   - bind-utils
+context:
+  containerfile: ./build/images/training-operator/Dockerfile.konflux 
