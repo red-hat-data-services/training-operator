@@ -34,22 +34,12 @@ spec:
   pipelineRef:
     resolver: git
     params:
-    - name: org
-      value: red-hat-data-services
-    - name: repo
-      value: rhoai-konflux-tasks
-    - name: scmType
-      value: github
-    - name: serverURL
-      value: https://github.com
+    - name: url
+      value: https://github.com/red-hat-data-services/rhoai-konflux-tasks.git
     - name: revision
       value: pipelines-poc
     - name: pathInRepo
       value: pipelines/container-build.yaml
-    - name: token
-      value: pipelines-as-code-secret
-    - name: tokenKey
-      value: password
   taskRunTemplate: {}
   workspaces:
   - name: git-auth
