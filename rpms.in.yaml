@@ -2,9 +2,8 @@ contentOrigin:
   repofiles:
     - ubi.repo
 packages:
+  - bind-utils
   - gcc
+  - krb5-devel
   - make
   - openssl-devel
-  - bind-utils
-context:
-  containerfile: ./build/images/training-operator/Dockerfile.konflux

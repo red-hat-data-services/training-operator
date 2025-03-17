@@ -1,9 +1,9 @@
 ARG SOURCE_CODE=.
 
 # BEGIN -- workaround lack of go-toolset for golang 1.23
-FROM brew.registry.redhat.io/rh-osbs/openshift-golang-builder:1.23.2@sha256:ca0c771ecd4f606986253f747e2773fe2960a6b5e8e7a52f6a4797b173ac7f56 AS golang
+FROM brew.registry.redhat.io/rh-osbs/openshift-golang-builder:rhel_9_golang_1.23@sha256:4805e1cb2d1bd9d3c5de5d6986056bbda94ca7b01642f721d83d26579d333c60 AS golang
 
-FROM registry.access.redhat.com/ubi8/ubi@sha256:9b1da61e9bf7f36bf861aa97b7a2cf0062713581c8569d72e970c4f9085278d5 AS builder
+FROM registry.access.redhat.com/ubi9/ubi@sha256:b88227436597e960f70db8eadcaf18ffa5b6d1a615888f709dcae3fba1540c61 AS builder
 
 ARG GOLANG_VERSION=1.23.2
 
@@ -12,6 +12,7 @@ RUN dnf upgrade -y && dnf install -y \
     gcc \
     make \
     openssl-devel \
+    krb5-devel \
     && dnf clean all && rm -rf /var/cache/yum
 
 # Install Go
@@ -34,10 +35,10 @@ COPY . .
 
 # Build
 USER root
-RUN CGO_ENABLED=1 GOOS=linux GO111MODULE=on go build -tags strictfipsruntime -a -o manager cmd/training-operator.v1/main.go
+RUN CGO_ENABLED=1 GOOS=linux GO111MODULE=on GOEXPERIMENT=strictfipsruntime go build -tags strictfipsruntime -a -o manager cmd/training-operator.v1/main.go
 
 # Runtime
-FROM registry.redhat.io/ubi8/ubi-minimal@sha256:3544399c893a7f32d16220d22d493ae32e61379668e32bc54a74d8eb6ece80fc AS runtime
+FROM registry.access.redhat.com/ubi9/ubi-minimal@sha256:30bbd445046a3a63f5f5557a3c67dee74e3c8e7855eb0347630b020f3689823f AS runtime
 
 ARG USER=65532
 
@@ -51,7 +52,7 @@ LABEL com.redhat.component="odh-training-operator-container" \
       io.k8s.description="odh-training-operator" \
       com.redhat.license_terms="https://www.redhat.com/licenses/Red_Hat_Standard_EULA_20191108.pdf"
 
-RUN microdnf update -y && microdnf install -y bind-utils
+RUN microdnf install -y bind-utils
 
 WORKDIR /
 COPY --from=builder /workspace/manager .
