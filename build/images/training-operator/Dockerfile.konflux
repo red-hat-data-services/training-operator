@@ -3,7 +3,7 @@ ARG SOURCE_CODE=.
 # BEGIN -- workaround lack of go-toolset for golang 1.23
 FROM brew.registry.redhat.io/rh-osbs/openshift-golang-builder:1.23.2@sha256:ca0c771ecd4f606986253f747e2773fe2960a6b5e8e7a52f6a4797b173ac7f56 AS golang
 
-FROM registry.access.redhat.com/ubi8/ubi@sha256:9b1da61e9bf7f36bf861aa97b7a2cf0062713581c8569d72e970c4f9085278d5 AS builder
+FROM registry.access.redhat.com/ubi8/ubi@sha256:e4b9bc5173fe3c1d471fad7b01e7545ae549a3d7f73e125a3f47c05b634ab4a1 AS builder
 
 ARG GOLANG_VERSION=1.23.2
 
@@ -37,7 +37,7 @@ USER root
 RUN CGO_ENABLED=1 GOOS=linux GO111MODULE=on go build -tags strictfipsruntime -a -o manager cmd/training-operator.v1/main.go
 
 # Runtime
-FROM registry.redhat.io/ubi8/ubi-minimal@sha256:3544399c893a7f32d16220d22d493ae32e61379668e32bc54a74d8eb6ece80fc AS runtime
+FROM registry.redhat.io/ubi8/ubi-minimal@sha256:e4ca1025efad7cc944fb991c716067b12e25ecbe05e6e81715a337179e417aa8 AS runtime
 
 ARG USER=65532
 
