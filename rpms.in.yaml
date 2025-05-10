@@ -1,7 +1,9 @@
 arches:
-- x86_64
+  - x86_64
 contentOrigin:
   repofiles:
     - ubi.repo
 packages:
   - bind-utils
+context:
+  containerfile: build/images/training-operator/Dockerfile.konflux
