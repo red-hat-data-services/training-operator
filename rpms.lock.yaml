@@ -130,20 +130,6 @@ arches:
     name: gdbm-libs
     evr: 1:1.18-2.el8
     sourcerpm: gdbm-1.18-2.el8.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/g/glibc-2.28-251.el8_10.22.x86_64.rpm
-    repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 2307480
-    checksum: sha256:1142cb82a1cb383c724941571de24279868a83f63a0bfe0a19f9d209003ab1ae
-    name: glibc
-    evr: 2.28-251.el8_10.22
-    sourcerpm: glibc-2.28-251.el8_10.22.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/g/glibc-common-2.28-251.el8_10.22.x86_64.rpm
-    repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 1053008
-    checksum: sha256:f6e81fe53463a28eaf7eabcc71fbd7cb128960a9a2de98bc6db29d68cd34c7b3
-    name: glibc-common
-    evr: 2.28-251.el8_10.22
-    sourcerpm: glibc-2.28-251.el8_10.22.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/g/glibc-devel-2.28-251.el8_10.22.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 91924
@@ -156,20 +142,6 @@ arches:
     size: 506616
     checksum: sha256:0ee590c9959f614ec25ca6548c2c66df2c5611588c6943f26434c9468f5d73ad
     name: glibc-headers
-    evr: 2.28-251.el8_10.22
-    sourcerpm: glibc-2.28-251.el8_10.22.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/g/glibc-langpack-en-2.28-251.el8_10.22.x86_64.rpm
-    repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 853224
-    checksum: sha256:cd39373d62153f1b042105f23772fed281aa4c06edbe4aca7180d9f7c0295049
-    name: glibc-langpack-en
-    evr: 2.28-251.el8_10.22
-    sourcerpm: glibc-2.28-251.el8_10.22.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/g/glibc-minimal-langpack-2.28-251.el8_10.22.x86_64.rpm
-    repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 73464
-    checksum: sha256:6c127ec983552bc9e6d18b9155d0768855c326c99d1d958fad214a8e37e3781c
-    name: glibc-minimal-langpack
     evr: 2.28-251.el8_10.22
     sourcerpm: glibc-2.28-251.el8_10.22.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.56.1.el8_10.x86_64.rpm
