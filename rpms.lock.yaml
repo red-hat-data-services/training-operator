@@ -305,13 +305,13 @@ arches:
     name: platform-python-pip
     evr: 9.0.3-24.el8
     sourcerpm: python-pip-9.0.3-24.el8.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/p/platform-python-setuptools-39.2.0-8.el8_10.noarch.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/p/platform-python-setuptools-39.2.0-9.el8_10.noarch.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 647476
-    checksum: sha256:8f330a8602613473b6e4c0bc57cb3012932a9a9399ea7a3fa65175453a6580ab
+    size: 647688
+    checksum: sha256:c809d773ee4709e911391552c2a162d04381848603a69102eb785a235b1c66be
     name: platform-python-setuptools
-    evr: 39.2.0-8.el8_10
-    sourcerpm: python-setuptools-39.2.0-8.el8_10.src.rpm
+    evr: 39.2.0-9.el8_10
+    sourcerpm: python-setuptools-39.2.0-9.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/p/python3-libs-3.6.8-70.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 8252856
@@ -333,13 +333,13 @@ arches:
     name: python3-ply
     evr: 3.9-9.el8
     sourcerpm: python-ply-3.9-9.el8.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/p/python3-setuptools-wheel-39.2.0-8.el8_10.noarch.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/p/python3-setuptools-wheel-39.2.0-9.el8_10.noarch.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 296040
-    checksum: sha256:833dcb68b1eea48bfb8853886236753647743258fd74cc538ffa72408aab9213
+    size: 296208
+    checksum: sha256:eed50a1612ab8303c50f62d7c3409020b2ff829037cc651725562afa95e56e05
     name: python3-setuptools-wheel
-    evr: 39.2.0-8.el8_10
-    sourcerpm: python-setuptools-39.2.0-8.el8_10.src.rpm
+    evr: 39.2.0-9.el8_10
+    sourcerpm: python-setuptools-39.2.0-9.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/z/zlib-devel-1.2.11-25.el8.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 59988
