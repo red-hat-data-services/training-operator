@@ -144,13 +144,13 @@ arches:
     name: glibc-headers
     evr: 2.28-251.el8_10.22
     sourcerpm: glibc-2.28-251.el8_10.22.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.64.1.el8_10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.66.1.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 12424468
-    checksum: sha256:eca6071fdeb47daee28dddd1e48ed8447b1c41b58a883b6b26da680d561f2733
+    size: 12425328
+    checksum: sha256:8f6e3f6ea42b0b20404961154543084f2055e8f01419b002dfa73a4c5d5991fc
     name: kernel-headers
-    evr: 4.18.0-553.64.1.el8_10
-    sourcerpm: kernel-4.18.0-553.64.1.el8_10.src.rpm
+    evr: 4.18.0-553.66.1.el8_10
+    sourcerpm: kernel-4.18.0-553.66.1.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/keyutils-libs-devel-1.5.10-9.el8.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 49216
