@@ -33,7 +33,7 @@ REQUIRES = [
 
 setuptools.setup(
     name="kubeflow-training",
-    version="1.9.0",
+    version="1.9.3",
     author="Kubeflow Authors",
     author_email="hejinchi@cn.ibm.com",
     license="Apache License Version 2.0",
@@ -64,6 +64,6 @@ setuptools.setup(
     tests_require=TESTS_REQUIRES,
     extras_require={
         "test": TESTS_REQUIRES,
-        "huggingface": ["transformers==4.38.0", "peft==0.3.0"],
+        "huggingface": ["transformers==4.50.2", "peft==0.15.1"],
     },
 )

@@ -65,6 +65,9 @@ JOB_ROLE_MASTER = "master"
 REPLICA_TYPE_LABEL = "training.kubeflow.org/replica-type"
 REPLICA_INDEX_LABEL = "training.kubeflow.org/replica-index"
 
+# Queue Label Name
+LOCAL_QUEUE_LABEL = "kueue.x-k8s.io/queue-name"
+
 # Various replica types.
 REPLICA_TYPE_CHIEF = "Chief"
 REPLICA_TYPE_PS = "PS"
@@ -84,7 +87,7 @@ PVC_DEFAULT_ACCESS_MODES = ["ReadWriteOnce", "ReadOnlyMany"]
 
 # TODO (andreyvelich): We should add image tag for Storage Initializer and Trainer.
 STORAGE_INITIALIZER_IMAGE = os.getenv(
-    "STORAGE_INITIALIZER_IMAGE", "docker.io/kubeflow/storage-initializer"
+    "STORAGE_INITIALIZER_IMAGE", "ghcr.io/kubeflow/training-v1/storage-initializer"
 )
 
 STORAGE_INITIALIZER_VOLUME_MOUNT = models.V1VolumeMount(
@@ -93,7 +96,7 @@ STORAGE_INITIALIZER_VOLUME_MOUNT = models.V1VolumeMount(
 )
 
 TRAINER_TRANSFORMER_IMAGE = os.getenv(
-    "TRAINER_TRANSFORMER_IMAGE", "docker.io/kubeflow/trainer-huggingface"
+    "TRAINER_TRANSFORMER_IMAGE", "ghcr.io/kubeflow/training-v1/trainer-huggingface"
 )
 
 # TFJob constants.
@@ -153,7 +156,7 @@ JAXJOB_MODEL = "KubeflowOrgV1JAXJob"
 JAXJOB_PLURAL = "jaxjobs"
 JAXJOB_CONTAINER = "jax"
 JAXJOB_REPLICA_TYPES = REPLICA_TYPE_WORKER.lower()
-JAXJOB_BASE_IMAGE = "docker.io/kubeflow/jaxjob-dist-spmd-mnist:latest"
+JAXJOB_BASE_IMAGE = "ghcr.io/kubeflow/training-v1/jaxjob-dist-spmd-mnist:latest"
 
 # Dictionary to get plural, model, and container for each Job kind.
 JOB_PARAMETERS = {
