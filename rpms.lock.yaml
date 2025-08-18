@@ -172,13 +172,13 @@ arches:
     name: glibc-minimal-langpack
     evr: 2.28-251.el8_10.25
     sourcerpm: glibc-2.28-251.el8_10.25.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.69.1.el8_10.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/kernel-headers-4.18.0-553.70.1.el8_10.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
-    size: 12429052
-    checksum: sha256:664b7e7d21b2f1b5142f61eb2562dd21ec643e37b3f590692cae1023254a64bb
+    size: 12429868
+    checksum: sha256:c7790ec182e19355e3ea214d688af09bd5594885d70215b5afea4f6d4d59579e
     name: kernel-headers
-    evr: 4.18.0-553.69.1.el8_10
-    sourcerpm: kernel-4.18.0-553.69.1.el8_10.src.rpm
+    evr: 4.18.0-553.70.1.el8_10
+    sourcerpm: kernel-4.18.0-553.70.1.el8_10.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi8/8/x86_64/baseos/os/Packages/k/keyutils-libs-devel-1.5.10-9.el8.x86_64.rpm
     repoid: ubi-8-for-x86_64-baseos-rpms
     size: 49216
