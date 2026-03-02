@@ -58,7 +58,7 @@ func validatePaddleReplicaSpecs(specs map[ReplicaType]*ReplicaSpec) error {
 		for _, container := range value.Template.Spec.Containers {
 			if container.Image == "" {
 				msg := fmt.Sprintf("PaddleJobSpec is not valid: Image is undefined in the container of %v", rType)
-				return fmt.Errorf(msg)
+				return fmt.Errorf("%s", msg)
 			}
 			if container.Name == PaddleJobDefaultContainerName {
 				defaultContainerPresent = true
@@ -67,7 +67,7 @@ func validatePaddleReplicaSpecs(specs map[ReplicaType]*ReplicaSpec) error {
 		//Make sure there has at least one container named "paddle"
 		if !defaultContainerPresent {
 			msg := fmt.Sprintf("PaddleJobSpec is not valid: There is no container named %s in %v", PaddleJobDefaultContainerName, rType)
-			return fmt.Errorf(msg)
+			return fmt.Errorf("%s", msg)
 		}
 
 	}

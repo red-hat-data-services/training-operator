@@ -64,7 +64,7 @@ func validateV1TFReplicaSpecs(specs map[ReplicaType]*ReplicaSpec) error {
 			if container.Image == "" {
 				msg := fmt.Sprintf("TFJobSpec is not valid: Image is undefined in the container of %v", rType)
 				log.Error(msg)
-				return fmt.Errorf(msg)
+				return fmt.Errorf("%s", msg)
 			}
 			if container.Name == TFJobDefaultContainerName {
 				numNamedTensorflow++
@@ -74,7 +74,7 @@ func validateV1TFReplicaSpecs(specs map[ReplicaType]*ReplicaSpec) error {
 		if numNamedTensorflow == 0 {
 			msg := fmt.Sprintf("TFJobSpec is not valid: There is no container named %s in %v", TFJobDefaultContainerName, rType)
 			log.Error(msg)
-			return fmt.Errorf(msg)
+			return fmt.Errorf("%s", msg)
 		}
 	}
 	if foundChief > 1 {

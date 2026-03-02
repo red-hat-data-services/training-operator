@@ -671,7 +671,7 @@ func (jc *MPIJobReconciler) getLauncherJob(mpiJob *kubeflowv1.MPIJob) (*corev1.P
 	if !metav1.IsControlledBy(launcher, mpiJob) {
 		msg := fmt.Sprintf(MessageResourceExists, launcher.Name, launcher.Kind)
 		jc.Recorder.Event(mpiJob, corev1.EventTypeWarning, ErrResourceExists, msg)
-		return launcher, fmt.Errorf(msg)
+		return launcher, fmt.Errorf("%s", msg)
 	}
 	return launcher, nil
 }
@@ -706,7 +706,7 @@ func (jc *MPIJobReconciler) getOrCreateConfigMap(mpiJob *kubeflowv1.MPIJob, work
 	if !metav1.IsControlledBy(cm, mpiJob) {
 		msg := fmt.Sprintf(MessageResourceExists, cm.Name, cm.Kind)
 		jc.Recorder.Event(mpiJob, corev1.EventTypeWarning, ErrResourceExists, msg)
-		return nil, fmt.Errorf(msg)
+		return nil, fmt.Errorf("%s", msg)
 	}
 
 	// If the ConfigMap is changed, update it
@@ -776,7 +776,7 @@ func (jc *MPIJobReconciler) getOrCreateLauncherRole(mpiJob *kubeflowv1.MPIJob, w
 	if !metav1.IsControlledBy(role, mpiJob) {
 		msg := fmt.Sprintf(MessageResourceExists, role.Name, role.Kind)
 		jc.Recorder.Event(mpiJob, corev1.EventTypeWarning, ErrResourceExists, msg)
-		return nil, fmt.Errorf(msg)
+		return nil, fmt.Errorf("%s", msg)
 	}
 
 	if !reflect.DeepEqual(role.Rules, launcherRole.Rules) {
@@ -815,7 +815,7 @@ func (jc *MPIJobReconciler) getLauncherRoleBinding(mpiJob *kubeflowv1.MPIJob) (*
 	if !metav1.IsControlledBy(rb, mpiJob) {
 		msg := fmt.Sprintf(MessageResourceExists, rb.Name, rb.Kind)
 		jc.Recorder.Event(mpiJob, corev1.EventTypeWarning, ErrResourceExists, msg)
-		return nil, fmt.Errorf(msg)
+		return nil, fmt.Errorf("%s", msg)
 	}
 
 	return rb, nil
@@ -880,7 +880,7 @@ func (jc *MPIJobReconciler) getOrCreateWorker(mpiJob *kubeflowv1.MPIJob) ([]*cor
 			if worker == nil {
 				msg := fmt.Sprintf(MessageResourceDoesNotExist, "Worker")
 				jc.Recorder.Event(mpiJob, corev1.EventTypeWarning, ErrResourceDoesNotExist, msg)
-				err = fmt.Errorf(msg)
+				err = fmt.Errorf("%s", msg)
 				return nil, err
 			}
 			// Insert ReplicaIndexLabel
@@ -906,7 +906,7 @@ func (jc *MPIJobReconciler) getOrCreateWorker(mpiJob *kubeflowv1.MPIJob) ([]*cor
 		if pod != nil && !metav1.IsControlledBy(pod, mpiJob) {
 			msg := fmt.Sprintf(MessageResourceExists, pod.Name, pod.Kind)
 			jc.Recorder.Event(mpiJob, corev1.EventTypeWarning, ErrResourceExists, msg)
-			return nil, fmt.Errorf(msg)
+			return nil, fmt.Errorf("%s", msg)
 		}
 		workerPods = append(workerPods, pod)
 	}

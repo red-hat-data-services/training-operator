@@ -59,7 +59,7 @@ func validateXGBoostReplicaSpecs(specs map[ReplicaType]*ReplicaSpec) error {
 		for _, container := range value.Template.Spec.Containers {
 			if container.Image == "" {
 				msg := fmt.Sprintf("XGBoostReplicaType is not valid: Image is undefined in the container of %v", rType)
-				return fmt.Errorf(msg)
+				return fmt.Errorf("%s", msg)
 			}
 			if container.Name == XGBoostJobDefaultContainerName {
 				defaultContainerPresent = true
@@ -68,7 +68,7 @@ func validateXGBoostReplicaSpecs(specs map[ReplicaType]*ReplicaSpec) error {
 		//Make sure there has at least one container named "xgboost"
 		if !defaultContainerPresent {
 			msg := fmt.Sprintf("XGBoostReplicaType is not valid: There is no container named %s in %v", XGBoostJobDefaultContainerName, rType)
-			return fmt.Errorf(msg)
+			return fmt.Errorf("%s", msg)
 		}
 		if rType == XGBoostJobReplicaTypeMaster {
 			masterExists = true
