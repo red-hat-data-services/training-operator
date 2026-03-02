@@ -1,6 +1,6 @@
 ARG SOURCE_CODE=.
 
-FROM registry.access.redhat.com/ubi8/go-toolset:1.21@sha256:4ec05fd5b355106cc0d990021a05b71bbfb9231e4f5bdc0c5316515edf6a1c96 as builder
+FROM registry.access.redhat.com/ubi9/go-toolset:1.25@sha256:c3c17f32e41322981f928898d384a8e914bd653a98270487870742f3d90fce86 as builder
 
 WORKDIR /workspace
 # Copy the Go Modules manifests
