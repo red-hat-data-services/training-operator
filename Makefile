@@ -42,6 +42,10 @@ manifests: controller-gen ## Generate WebhookConfiguration, ClusterRole and Cust
 		output:rbac:artifacts:config=manifests/base/rbac \
 		output:webhook:artifacts:config=manifests/base/webhook
 
+# k8s.io/code-generator@v0.31.x and crd-ref-docs depend on golang.org/x/tools
+# versions incompatible with Go 1.25+. Use Go 1.23 toolchain for generation.
+export GOTOOLCHAIN=go1.23.2+auto
+
 generate: go-mod-download manifests ## Generate apidoc, sdk and code containing DeepCopy, DeepCopyInto, and DeepCopyObject method implementations.
 	$(CONTROLLER_GEN) object:headerFile="hack/boilerplate/boilerplate.go.txt" paths="./pkg/apis/..."
 	hack/update-codegen.sh
@@ -57,13 +61,15 @@ fmt: ## Run go fmt against code.
 vet: ## Run go vet against code.
 	go vet ./...
 
-GOLANGCI_LINT=$(shell which golangci-lint)
-golangci-lint:
-ifeq ($(GOLANGCI_LINT),)
-	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(shell go env GOPATH)/bin v1.61.0
-	$(info golangci-lint has been installed)
-endif
-	golangci-lint run --timeout 5m --go 1.23 ./...
+GOLANGCI_LINT = $(PROJECT_DIR)/bin/golangci-lint
+.PHONY: golangci-lint-install
+golangci-lint-install: ## Download golangci-lint locally if necessary.
+	GOBIN=$(PROJECT_DIR)/bin go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.12.1
+
+LINT_PKG ?= ./...
+.PHONY: golangci-lint
+golangci-lint: golangci-lint-install ## Run golangci-lint against code.
+	$(GOLANGCI_LINT) run --timeout 5m $(LINT_PKG)
 
 ENVTEST_K8S_VERSION ?= 1.31
 HAS_SETUP_ENVTEST := $(shell command -v setup-envtest;)
