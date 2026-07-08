@@ -1,8 +1,6 @@
 module github.com/kubeflow/training-operator
 
-go 1.25
-
-toolchain go1.25.7
+go 1.26.4
 
 require (
 	github.com/go-logr/logr v1.4.2
