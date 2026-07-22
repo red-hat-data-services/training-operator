@@ -40,7 +40,8 @@ type Config struct {
 
 // Note: Secrets access is handled via a namespace-scoped Role (not ClusterRole) to limit
 // permissions to the operator's own namespace only. See manifests/base/rbac/webhook-secret-role.yaml.
-//+kubebuilder:rbac:groups="admissionregistration.k8s.io",resources=validatingwebhookconfigurations,verbs=get;list;watch;update
+//+kubebuilder:rbac:groups="admissionregistration.k8s.io",resources=validatingwebhookconfigurations,verbs=list;watch
+//+kubebuilder:rbac:groups="admissionregistration.k8s.io",resources=validatingwebhookconfigurations,verbs=get;update,resourceNames=kubeflow-validator.training-operator.kubeflow.org
 
 // ManageCerts creates all certs for webhooks.
 func ManageCerts(mgr ctrl.Manager, cfg Config, setupFinished chan struct{}) error {
