@@ -1,5 +1,5 @@
 ARG SOURCE_CODE=.
-FROM registry.access.redhat.com/ubi9/go-toolset@sha256:60fd6fb2998c40ad0d6561c34e83588b986a0cf7771f64e5e5c295ba87101f9b as builder
+FROM registry.access.redhat.com/ubi9/go-toolset@sha256:cab9089469c52029e4d8a4e9f717e87c51ab22eed448ebcada101b811f97dfe7 as builder
 
 WORKDIR /workspace
 # Copy the Go Modules manifests
@@ -17,7 +17,7 @@ USER root
 RUN CGO_ENABLED=1 GOOS=linux GO111MODULE=on GOEXPERIMENT=strictfipsruntime go build -tags strictfipsruntime -a -o manager cmd/training-operator.v1/main.go
 
 # Runtime
-FROM registry.access.redhat.com/ubi9/ubi-minimal@sha256:c4c285d42941ebb2bd4da878479008e1e4536bb599aad1dbe568f89de9053661 AS runtime
+FROM registry.access.redhat.com/ubi9/ubi-minimal@sha256:bba2b4bbf0ed15cfe7dd72a1e17ae7d2015a141f306b304e1a2785c41400e39c AS runtime
 
 ARG USER=65532
 
