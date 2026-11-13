@@ -4,27 +4,27 @@ lockfileVendor: redhat
 arches:
 - arch: aarch64
   packages:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/b/bind-libs-9.16.23-40.el9_8.13.aarch64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/b/bind-libs-9.16.50-12.el9_9.1.aarch64.rpm
     repoid: ubi-9-for-aarch64-appstream-rpms
-    size: 1263302
-    checksum: sha256:3fabf53a959988eb0e9a739a6e1094ebd3102ac92683157b9258e3452da5446d
+    size: 1270260
+    checksum: sha256:06e2dcdea0b395e5263e06ef6255a74c602fbc3d58173ec8f4c4a4c2d110076a
     name: bind-libs
-    evr: 32:9.16.23-40.el9_8.13
-    sourcerpm: bind-9.16.23-40.el9_8.13.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/b/bind-license-9.16.23-40.el9_8.13.noarch.rpm
+    evr: 32:9.16.50-12.el9_9.1
+    sourcerpm: bind-9.16.50-12.el9_9.1.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/b/bind-license-9.16.50-12.el9_9.1.noarch.rpm
     repoid: ubi-9-for-aarch64-appstream-rpms
-    size: 20380
-    checksum: sha256:56c2896bb38ec6599c2876b528f29ae011678fde18d8bc326f64d37570c3f995
+    size: 21189
+    checksum: sha256:86fa699f33fc52b6973254e1307efdc518815f577bb234cd34a8458d6db6bea0
     name: bind-license
-    evr: 32:9.16.23-40.el9_8.13
-    sourcerpm: bind-9.16.23-40.el9_8.13.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/b/bind-utils-9.16.23-40.el9_8.13.aarch64.rpm
+    evr: 32:9.16.50-12.el9_9.1
+    sourcerpm: bind-9.16.50-12.el9_9.1.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/b/bind-utils-9.16.50-12.el9_9.1.aarch64.rpm
     repoid: ubi-9-for-aarch64-appstream-rpms
-    size: 219714
-    checksum: sha256:400ef484a2ef6cd903cb7ae43700338a9f2972168a9d51dd90c0100cae2c6cf1
+    size: 226614
+    checksum: sha256:6db078184d13bdeb40c6fc00c11aec8852c36c9d02a464a1973068cd6932dfe3
     name: bind-utils
-    evr: 32:9.16.23-40.el9_8.13
-    sourcerpm: bind-9.16.23-40.el9_8.13.src.rpm
+    evr: 32:9.16.50-12.el9_9.1
+    sourcerpm: bind-9.16.50-12.el9_9.1.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/os/Packages/f/fstrm-0.6.1-3.el9.aarch64.rpm
     repoid: ubi-9-for-aarch64-appstream-rpms
     size: 29476
@@ -46,13 +46,13 @@ arches:
     name: libuv
     evr: 1:1.42.0-2.el9_4
     sourcerpm: libuv-1.42.0-2.el9_4.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/baseos/os/Packages/l/lmdb-libs-0.9.29-3.el9.aarch64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/baseos/os/Packages/l/lmdb-libs-0.9.32-1.el9.aarch64.rpm
     repoid: ubi-9-for-aarch64-baseos-rpms
-    size: 65370
-    checksum: sha256:81e64f24142a933be412847b892d49fad35d0eaf4b7eda54257af0fdaafaf87c
+    size: 66415
+    checksum: sha256:49a541dd933be41fea2626e0387e274405cf5f7b16d1c6ed6da1db0cebca7476
     name: lmdb-libs
-    evr: 0.9.29-3.el9
-    sourcerpm: lmdb-0.9.29-3.el9.src.rpm
+    evr: 0.9.32-1.el9
+    sourcerpm: lmdb-0.9.32-1.el9.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/baseos/os/Packages/p/protobuf-c-1.3.3-13.el9.aarch64.rpm
     repoid: ubi-9-for-aarch64-baseos-rpms
     size: 38582
@@ -61,12 +61,12 @@ arches:
     evr: 1.3.3-13.el9
     sourcerpm: protobuf-c-1.3.3-13.el9.src.rpm
   source:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/source/SRPMS/Packages/b/bind-9.16.23-40.el9_8.13.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/source/SRPMS/Packages/b/bind-9.16.50-12.el9_9.1.src.rpm
     repoid: ubi-9-for-aarch64-appstream-source-rpms
-    size: 5421570
-    checksum: sha256:e61c995beaed8dff4651652d5abd43fd165cf962fbf88fee4b8944399505cf70
+    size: 5411369
+    checksum: sha256:72a46756ee191731a76178094bdf261d3f95e324b1a0e9523ceb54da20c491b8
     name: bind
-    evr: 32:9.16.23-40.el9_8.13
+    evr: 32:9.16.50-12.el9_9.1
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/appstream/source/SRPMS/Packages/f/fstrm-0.6.1-3.el9.src.rpm
     repoid: ubi-9-for-aarch64-appstream-source-rpms
     size: 487936
@@ -85,12 +85,12 @@ arches:
     checksum: sha256:f9dfa0dc965675730184604570c6a2aa95ddc2dfa6a7cb209514b1e744a4e3d7
     name: libuv
     evr: 1:1.42.0-2.el9_4
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/baseos/source/SRPMS/Packages/l/lmdb-0.9.29-3.el9.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/baseos/source/SRPMS/Packages/l/lmdb-0.9.32-1.el9.src.rpm
     repoid: ubi-9-for-aarch64-baseos-source-rpms
-    size: 160464
-    checksum: sha256:50247803039d80bea829afc4f63bfb18a9855f00a7f250798915fda0cc610d25
+    size: 167595
+    checksum: sha256:61e933e562532e9286180c018dae85cd6139cb4678adb21e4430e0347701ec74
     name: lmdb
-    evr: 0.9.29-3.el9
+    evr: 0.9.32-1.el9
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/aarch64/baseos/source/SRPMS/Packages/p/protobuf-c-1.3.3-13.el9.src.rpm
     repoid: ubi-9-for-aarch64-baseos-source-rpms
     size: 513224
@@ -100,27 +100,27 @@ arches:
   module_metadata: []
 - arch: ppc64le
   packages:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/os/Packages/b/bind-libs-9.16.23-40.el9_8.13.ppc64le.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/os/Packages/b/bind-libs-9.16.50-12.el9_9.1.ppc64le.rpm
     repoid: ubi-9-for-ppc64le-appstream-rpms
-    size: 1430426
-    checksum: sha256:4fd4ff5a85079099f5572435b453e6b84ee4ce1f4fc0c64b67083db7c4972e50
+    size: 1437173
+    checksum: sha256:86aa279219c5969dce211310cd54c3847881acf2f9263275fa5f18d64f425165
     name: bind-libs
-    evr: 32:9.16.23-40.el9_8.13
-    sourcerpm: bind-9.16.23-40.el9_8.13.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/os/Packages/b/bind-license-9.16.23-40.el9_8.13.noarch.rpm
+    evr: 32:9.16.50-12.el9_9.1
+    sourcerpm: bind-9.16.50-12.el9_9.1.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/os/Packages/b/bind-license-9.16.50-12.el9_9.1.noarch.rpm
     repoid: ubi-9-for-ppc64le-appstream-rpms
-    size: 20380
-    checksum: sha256:56c2896bb38ec6599c2876b528f29ae011678fde18d8bc326f64d37570c3f995
+    size: 21189
+    checksum: sha256:86fa699f33fc52b6973254e1307efdc518815f577bb234cd34a8458d6db6bea0
     name: bind-license
-    evr: 32:9.16.23-40.el9_8.13
-    sourcerpm: bind-9.16.23-40.el9_8.13.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/os/Packages/b/bind-utils-9.16.23-40.el9_8.13.ppc64le.rpm
+    evr: 32:9.16.50-12.el9_9.1
+    sourcerpm: bind-9.16.50-12.el9_9.1.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/os/Packages/b/bind-utils-9.16.50-12.el9_9.1.ppc64le.rpm
     repoid: ubi-9-for-ppc64le-appstream-rpms
-    size: 225256
-    checksum: sha256:bf6376210a9c509f91c17a8fac88b11f4d6ba44db1a9d59c9eac7b3e16cdd4af
+    size: 231766
+    checksum: sha256:aff1ff7c4e15ed8222ed7e285eb45a575e982d10ecc71db41ba6215a66a159dc
     name: bind-utils
-    evr: 32:9.16.23-40.el9_8.13
-    sourcerpm: bind-9.16.23-40.el9_8.13.src.rpm
+    evr: 32:9.16.50-12.el9_9.1
+    sourcerpm: bind-9.16.50-12.el9_9.1.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/os/Packages/f/fstrm-0.6.1-3.el9.ppc64le.rpm
     repoid: ubi-9-for-ppc64le-appstream-rpms
     size: 32044
@@ -142,13 +142,13 @@ arches:
     name: libuv
     evr: 1:1.42.0-2.el9_4
     sourcerpm: libuv-1.42.0-2.el9_4.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/baseos/os/Packages/l/lmdb-libs-0.9.29-3.el9.ppc64le.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/baseos/os/Packages/l/lmdb-libs-0.9.32-1.el9.ppc64le.rpm
     repoid: ubi-9-for-ppc64le-baseos-rpms
-    size: 74324
-    checksum: sha256:f5263491ec5d618428fe2150012f8c0935b752c6f8f0ca6ca38f066ec698b798
+    size: 74490
+    checksum: sha256:bea00b618b5a52a7701d695d5c3f306845349110281ecdaad53bf72d9644e036
     name: lmdb-libs
-    evr: 0.9.29-3.el9
-    sourcerpm: lmdb-0.9.29-3.el9.src.rpm
+    evr: 0.9.32-1.el9
+    sourcerpm: lmdb-0.9.32-1.el9.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/baseos/os/Packages/p/protobuf-c-1.3.3-13.el9.ppc64le.rpm
     repoid: ubi-9-for-ppc64le-baseos-rpms
     size: 41163
@@ -157,12 +157,12 @@ arches:
     evr: 1.3.3-13.el9
     sourcerpm: protobuf-c-1.3.3-13.el9.src.rpm
   source:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/source/SRPMS/Packages/b/bind-9.16.23-40.el9_8.13.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/source/SRPMS/Packages/b/bind-9.16.50-12.el9_9.1.src.rpm
     repoid: ubi-9-for-ppc64le-appstream-source-rpms
-    size: 5421570
-    checksum: sha256:e61c995beaed8dff4651652d5abd43fd165cf962fbf88fee4b8944399505cf70
+    size: 5411369
+    checksum: sha256:72a46756ee191731a76178094bdf261d3f95e324b1a0e9523ceb54da20c491b8
     name: bind
-    evr: 32:9.16.23-40.el9_8.13
+    evr: 32:9.16.50-12.el9_9.1
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/appstream/source/SRPMS/Packages/f/fstrm-0.6.1-3.el9.src.rpm
     repoid: ubi-9-for-ppc64le-appstream-source-rpms
     size: 487936
@@ -181,12 +181,12 @@ arches:
     checksum: sha256:f9dfa0dc965675730184604570c6a2aa95ddc2dfa6a7cb209514b1e744a4e3d7
     name: libuv
     evr: 1:1.42.0-2.el9_4
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/baseos/source/SRPMS/Packages/l/lmdb-0.9.29-3.el9.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/baseos/source/SRPMS/Packages/l/lmdb-0.9.32-1.el9.src.rpm
     repoid: ubi-9-for-ppc64le-baseos-source-rpms
-    size: 160464
-    checksum: sha256:50247803039d80bea829afc4f63bfb18a9855f00a7f250798915fda0cc610d25
+    size: 167595
+    checksum: sha256:61e933e562532e9286180c018dae85cd6139cb4678adb21e4430e0347701ec74
     name: lmdb
-    evr: 0.9.29-3.el9
+    evr: 0.9.32-1.el9
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/ppc64le/baseos/source/SRPMS/Packages/p/protobuf-c-1.3.3-13.el9.src.rpm
     repoid: ubi-9-for-ppc64le-baseos-source-rpms
     size: 513224
@@ -196,27 +196,27 @@ arches:
   module_metadata: []
 - arch: x86_64
   packages:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/os/Packages/b/bind-libs-9.16.23-40.el9_8.13.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/os/Packages/b/bind-libs-9.16.50-12.el9_9.1.x86_64.rpm
     repoid: ubi-9-for-x86_64-appstream-rpms
-    size: 1312591
-    checksum: sha256:3ebe0007b1a409b3d5d8a28ffdbcdd466f37377588ce56ca11d23f12b2ebfe7f
+    size: 1320756
+    checksum: sha256:983c6e747995683664e963ee2100c24d31e253aa8f2336df7ab42f86a029a0b7
     name: bind-libs
-    evr: 32:9.16.23-40.el9_8.13
-    sourcerpm: bind-9.16.23-40.el9_8.13.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/os/Packages/b/bind-license-9.16.23-40.el9_8.13.noarch.rpm
+    evr: 32:9.16.50-12.el9_9.1
+    sourcerpm: bind-9.16.50-12.el9_9.1.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/os/Packages/b/bind-license-9.16.50-12.el9_9.1.noarch.rpm
     repoid: ubi-9-for-x86_64-appstream-rpms
-    size: 20380
-    checksum: sha256:56c2896bb38ec6599c2876b528f29ae011678fde18d8bc326f64d37570c3f995
+    size: 21189
+    checksum: sha256:86fa699f33fc52b6973254e1307efdc518815f577bb234cd34a8458d6db6bea0
     name: bind-license
-    evr: 32:9.16.23-40.el9_8.13
-    sourcerpm: bind-9.16.23-40.el9_8.13.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/os/Packages/b/bind-utils-9.16.23-40.el9_8.13.x86_64.rpm
+    evr: 32:9.16.50-12.el9_9.1
+    sourcerpm: bind-9.16.50-12.el9_9.1.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/os/Packages/b/bind-utils-9.16.50-12.el9_9.1.x86_64.rpm
     repoid: ubi-9-for-x86_64-appstream-rpms
-    size: 219106
-    checksum: sha256:3c185b02e883423c0a5ed8e764ae4f76043d1c3c3be9e3750a25e0098fbcba90
+    size: 225998
+    checksum: sha256:83b24fb49c562df639ff0791a1fd7b791d374fb2d9dd98e8733af4fd46788f1a
     name: bind-utils
-    evr: 32:9.16.23-40.el9_8.13
-    sourcerpm: bind-9.16.23-40.el9_8.13.src.rpm
+    evr: 32:9.16.50-12.el9_9.1
+    sourcerpm: bind-9.16.50-12.el9_9.1.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/os/Packages/f/fstrm-0.6.1-3.el9.x86_64.rpm
     repoid: ubi-9-for-x86_64-appstream-rpms
     size: 30777
@@ -238,13 +238,13 @@ arches:
     name: libuv
     evr: 1:1.42.0-2.el9_4
     sourcerpm: libuv-1.42.0-2.el9_4.src.rpm
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/l/lmdb-libs-0.9.29-3.el9.x86_64.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/l/lmdb-libs-0.9.32-1.el9.x86_64.rpm
     repoid: ubi-9-for-x86_64-baseos-rpms
-    size: 64208
-    checksum: sha256:9ae27044c8cd2ceef9bc72319c30f7e24442b5c239f6cf4cc92670b75259f2f9
+    size: 65571
+    checksum: sha256:90d9f527f785363ee2a6879f0c04dd1ca49e62ca8e3a13fa31995b2523ac61c8
     name: lmdb-libs
-    evr: 0.9.29-3.el9
-    sourcerpm: lmdb-0.9.29-3.el9.src.rpm
+    evr: 0.9.32-1.el9
+    sourcerpm: lmdb-0.9.32-1.el9.src.rpm
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/os/Packages/p/protobuf-c-1.3.3-13.el9.x86_64.rpm
     repoid: ubi-9-for-x86_64-baseos-rpms
     size: 38224
@@ -253,12 +253,12 @@ arches:
     evr: 1.3.3-13.el9
     sourcerpm: protobuf-c-1.3.3-13.el9.src.rpm
   source:
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/source/SRPMS/Packages/b/bind-9.16.23-40.el9_8.13.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/source/SRPMS/Packages/b/bind-9.16.50-12.el9_9.1.src.rpm
     repoid: ubi-9-for-x86_64-appstream-source-rpms
-    size: 5421570
-    checksum: sha256:e61c995beaed8dff4651652d5abd43fd165cf962fbf88fee4b8944399505cf70
+    size: 5411369
+    checksum: sha256:72a46756ee191731a76178094bdf261d3f95e324b1a0e9523ceb54da20c491b8
     name: bind
-    evr: 32:9.16.23-40.el9_8.13
+    evr: 32:9.16.50-12.el9_9.1
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/appstream/source/SRPMS/Packages/f/fstrm-0.6.1-3.el9.src.rpm
     repoid: ubi-9-for-x86_64-appstream-source-rpms
     size: 487936
@@ -277,12 +277,12 @@ arches:
     checksum: sha256:f9dfa0dc965675730184604570c6a2aa95ddc2dfa6a7cb209514b1e744a4e3d7
     name: libuv
     evr: 1:1.42.0-2.el9_4
-  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/source/SRPMS/Packages/l/lmdb-0.9.29-3.el9.src.rpm
+  - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/source/SRPMS/Packages/l/lmdb-0.9.32-1.el9.src.rpm
     repoid: ubi-9-for-x86_64-baseos-source-rpms
-    size: 160464
-    checksum: sha256:50247803039d80bea829afc4f63bfb18a9855f00a7f250798915fda0cc610d25
+    size: 167595
+    checksum: sha256:61e933e562532e9286180c018dae85cd6139cb4678adb21e4430e0347701ec74
     name: lmdb
-    evr: 0.9.29-3.el9
+    evr: 0.9.32-1.el9
   - url: https://cdn-ubi.redhat.com/content/public/ubi/dist/ubi9/9/x86_64/baseos/source/SRPMS/Packages/p/protobuf-c-1.3.3-13.el9.src.rpm
     repoid: ubi-9-for-x86_64-baseos-source-rpms
     size: 513224
